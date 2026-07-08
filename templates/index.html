@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 下载</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Codex 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img">
+          <path d="M16 3.5 26.8 9.8v12.4L16 28.5 5.2 22.2V9.8L16 3.5Z"></path>
+          <path d="M16 8.2 22.7 12v8L16 23.8 9.3 20v-8L16 8.2Z"></path>
+        </svg>
+      </span>
+      <span>Codex</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="download">
+      <div class="hero-copy">
+        <p class="eyebrow">Windows 安装包</p>
+        <h1>Codex</h1>
+        <p class="lede">面向 Windows 的 Codex 安装包下载页，实时获取可用版本。</p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" id="show-official-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"></path>
+              <path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"></path>
+            </svg>
+            <span id="official-link-label">获取官方直链</span>
+          </button>
+          <a class="button secondary" href="/proxy-download">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"></path>
+            </svg>
+            <span>代理下载</span>
+          </a>
+          <button class="button ghost" type="button" id="refresh-version">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path>
+            </svg>
+            <span id="refresh-version-label">查看版本</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="release-card" id="release" aria-label="最新版本信息">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">最新版本</p>
+            <h2 id="version-value">{{if .File}}{{.File.Version}}{{else}}正在获取{{end}}</h2>
+          </div>
+          <span class="status {{if .Error}}status-warn{{else}}status-ok{{end}}" id="download-status">
+            <span aria-hidden="true"></span>
+            <b>{{if .Error}}待重试{{else}}可下载{{end}}</b>
+          </span>
+        </div>
+
+        {{if .Error}}
+          <p class="error-text">{{.Error}}</p>
+        {{else if .File}}
+          <div class="package-name" id="package-name">{{.File.Name}}</div>
+          <dl class="meta-grid">
+            <div>
+              <dt>架构</dt>
+              <dd id="arch-value">{{.File.Arch}}</dd>
+            </div>
+            <div>
+              <dt>格式</dt>
+              <dd>MSIX</dd>
+            </div>
+            <div>
+              <dt>大小</dt>
+              <dd id="size-value">{{.File.Size}}</dd>
+            </div>
+            <div>
+              <dt>有效期</dt>
+              <dd id="expires-value">{{.File.Expires}}</dd>
+            </div>
+          </dl>
+          <div class="hash-row" id="verify">
+            <span>SHA1 已验证</span>
+            <code id="sha1-value">{{.File.SHA1}}</code>
+          </div>
+        {{end}}
+        <div class="official-link-panel" id="official-link-panel" hidden>
+          <span>官方下载链接</span>
+          <a id="official-link" href="/download" target="_blank" rel="noreferrer"></a>
+          <div class="link-actions">
+            <a class="text-link" id="open-official-link" href="/download" target="_blank" rel="noreferrer">打开官方链接</a>
+            <button class="text-button" type="button" id="copy-official-link">复制链接</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="feature-band" aria-label="下载特性">
+      <article>
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4Z"></path><path d="m9 12 2 2 4-5"></path></svg>
+        </span>
+        <h3>安全下载</h3>
+        <p>来自 Microsoft Store 分发链路。</p>
+      </article>
+      <article>
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6"></path><path d="M20 9A8 8 0 0 0 6.3 5.2L4 10m0 5a8 8 0 0 0 13.7 3.8L20 14"></path></svg>
+        </span>
+        <h3>自动获取最新链接</h3>
+        <p>下载时重新生成有效直链。</p>
+      </article>
+      <article>
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path><path d="M14 2v6h6M9 15h6M9 18h4"></path></svg>
+        </span>
+        <h3>离线安装</h3>
+        <p>获取 MSIX 包后可本地留存。</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Codex Download</span>
+    <span>更新于 {{.GeneratedAt}}</span>
+  </footer>
+  <script>
+    const refreshButton = document.querySelector("#refresh-version");
+    const refreshLabel = document.querySelector("#refresh-version-label");
+    const officialButton = document.querySelector("#show-official-link");
+    const officialLabel = document.querySelector("#official-link-label");
+    const officialPanel = document.querySelector("#official-link-panel");
+    const officialLink = document.querySelector("#official-link");
+    const openOfficialLink = document.querySelector("#open-official-link");
+    const copyOfficialLink = document.querySelector("#copy-official-link");
+    const releaseCard = document.querySelector("#release");
+    const status = document.querySelector("#download-status");
+
+    function setStatus(text, className) {
+      if (!status) return;
+      status.classList.remove("status-ok", "status-warn");
+      status.classList.add(className);
+      const label = status.querySelector("b");
+      if (label) label.textContent = text;
+    }
+
+    function setText(selector, value) {
+      const node = document.querySelector(selector);
+      if (node && value) node.textContent = value;
+    }
+
+    function flashReleaseCard() {
+      if (!releaseCard) return;
+      releaseCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      releaseCard.classList.remove("is-highlighted");
+      void releaseCard.offsetWidth;
+      releaseCard.classList.add("is-highlighted");
+    }
+
+    async function fetchLatestFile() {
+        const response = await fetch("/api/latest", { cache: "no-store" });
+        if (!response.ok) throw new Error("获取失败");
+        const file = await response.json();
+
+        setText("#version-value", file.version);
+        setText("#package-name", file.name);
+        setText("#arch-value", file.arch);
+        setText("#size-value", file.size);
+        setText("#expires-value", file.expires);
+        setText("#sha1-value", file.sha1);
+        return file;
+    }
+
+    function showOfficialLink(file) {
+      if (!officialPanel || !officialLink || !openOfficialLink) return;
+      officialLink.href = file.url;
+      officialLink.textContent = file.url;
+      openOfficialLink.href = file.url;
+      officialPanel.hidden = false;
+    }
+
+    officialButton?.addEventListener("click", async () => {
+      officialButton.disabled = true;
+      officialLabel.textContent = "正在获取";
+
+      try {
+        const file = await fetchLatestFile();
+        showOfficialLink(file);
+        setStatus("直链已生成", "status-ok");
+        flashReleaseCard();
+        officialLabel.textContent = "官方直链已显示";
+      } catch (error) {
+        setStatus("待重试", "status-warn");
+        officialLabel.textContent = "获取失败";
+        flashReleaseCard();
+      } finally {
+        window.setTimeout(() => {
+          officialButton.disabled = false;
+          officialLabel.textContent = "获取官方直链";
+        }, 1600);
+      }
+    });
+
+    copyOfficialLink?.addEventListener("click", async () => {
+      const value = officialLink?.href;
+      if (!value) return;
+      try {
+        await navigator.clipboard.writeText(value);
+        copyOfficialLink.textContent = "已复制";
+      } catch (error) {
+        copyOfficialLink.textContent = "复制失败";
+      } finally {
+        window.setTimeout(() => {
+          copyOfficialLink.textContent = "复制链接";
+        }, 1400);
+      }
+    });
+
+    refreshButton?.addEventListener("click", async () => {
+      refreshButton.disabled = true;
+      refreshLabel.textContent = "正在获取";
+
+      try {
+        await fetchLatestFile();
+        setStatus("已刷新", "status-ok");
+        flashReleaseCard();
+        refreshLabel.textContent = "已刷新";
+      } catch (error) {
+        setStatus("待重试", "status-warn");
+        refreshLabel.textContent = "获取失败";
+        flashReleaseCard();
+      } finally {
+        window.setTimeout(() => {
+          refreshButton.disabled = false;
+          refreshLabel.textContent = "查看版本";
+        }, 1400);
+      }
+    });
+  </script>
+</body>
+</html>
