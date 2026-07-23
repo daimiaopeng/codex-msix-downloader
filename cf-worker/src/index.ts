@@ -652,7 +652,10 @@ export default {
 
       return new Response(renderHtml(pageData), {
         status: pageData.error ? 500 : 200,
-        headers: { "Content-Type": "text/html; charset=utf-8" },
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "public, max-age=60, s-maxage=3600",
+        },
       });
     }
 
