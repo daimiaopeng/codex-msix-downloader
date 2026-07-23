@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案一改动 B：Apple 软白圆润风格</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0066cc;
+      background: #e8f2ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .sub {
+      font-size: 0.875rem;
+      color: #86868b;
+    }
+    .meta-box {
+      background: #f5f5f7;
+      border-radius: 14px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .meta-item:last-child {
+      margin-bottom: 0;
+    }
+    .k { color: #86868b; }
+    .v { font-weight: 600; color: #1d1d1f; }
+    .btn-blue {
+      display: block;
+      width: 100%;
+      background: #0066cc;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.85rem;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+      transition: background 0.2s ease;
+    }
+    .btn-blue:hover {
+      background: #0055b3;
+    }
+    .btn-gray {
+      display: block;
+      width: 100%;
+      background: #e8e8ed;
+      color: #1d1d1f;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="tag">最新正式版 v1.0.23.0</div>
+      <h2>OpenAI Codex</h2>
+      <div class="sub">适用于 Windows 10/11 (x64)</div>
+    </div>
+
+    <div class="meta-box">
+      <div class="meta-item">
+        <span class="k">安装包格式</span>
+        <span class="v">MSIX 官方包</span>
+      </div>
+      <div class="meta-item">
+        <span class="k">包文件大小</span>
+        <span class="v">123.45 MB</span>
+      </div>
+      <div class="meta-item">
+        <span class="k">安全校验</span>
+        <span class="v">SHA-1 已验证</span>
+      </div>
+    </div>
+
+    <a href="#" class="btn-blue">立即下载安装包</a>
+    <a href="#" class="btn-gray">复制官方直链地址</a>
+  </div>
+</body>
+</html>

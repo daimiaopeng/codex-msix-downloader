@@ -36,6 +36,11 @@ This tool helps users bypass Windows Store connection restrictions by dynamicall
 ├── main.go                      # Go Web Server entrypoint
 ├── go.mod                       # Go Module definition
 ├── get_codex_download_link.py   # Python CLI helper script
+├── cf-worker/                   # Cloudflare Workers TypeScript implementation
+│   ├── package.json             # Worker dependencies & scripts
+│   ├── wrangler.jsonc           # Cloudflare Wrangler config
+│   ├── README.md                # Worker deployment guide
+│   └── src/                     # TypeScript source code
 ├── static/                      # Web Portal static assets
 │   └── styles.css               # Portal stylesheet
 └── templates/                   # Web Portal template views
@@ -140,6 +145,11 @@ python get_codex_download_link.py --help
 ├── main.go                      # Go Web 服务主入口
 ├── go.mod                       # Go 依赖配置
 ├── get_codex_download_link.py   # Python 命令行脚本
+├── cf-worker/                   # Cloudflare Workers TypeScript 版实现目录
+│   ├── package.json             # Worker 依赖与脚本配置
+│   ├── wrangler.jsonc           # Cloudflare Wrangler 部署配置文件
+│   ├── README.md                # Worker 开发与一键部署指南
+│   └── src/                     # TypeScript 源码 (入口、解析器、类型定义)
 ├── static/                      # 静态资源目录
 │   └── styles.css               # Web Portal 样式表
 └── templates/                   # 网页模板目录

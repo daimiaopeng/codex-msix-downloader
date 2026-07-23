@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案二：GitHub / 文档型扁平风格</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f6f8fa;
+      color: #1f2328;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      max-width: 600px;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .box-header {
+      background: #f6f8fa;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid #d0d7de;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .box-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .tag {
+      font-size: 0.75rem;
+      background: #ddf4ff;
+      color: #0969da;
+      padding: 0.15rem 0.5rem;
+      border-radius: 2rem;
+      font-weight: 600;
+    }
+    .box-body {
+      padding: 1.25rem;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+    }
+    .meta-table td {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #hsla(210,18%,87%,1);
+    }
+    .meta-table tr:last-child td {
+      border-bottom: none;
+    }
+    .meta-label {
+      color: #636c76;
+      width: 100px;
+    }
+    .meta-val {
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-green {
+      background: #1f883d;
+      color: #ffffff;
+      border: 1px solid rgba(31,35,40,0.15);
+    }
+    .btn-gray {
+      background: #f6f8fa;
+      color: #24292f;
+      border: 1px solid rgba(31,35,40,0.15);
+    }
+    .cmd-box {
+      margin-top: 1rem;
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      color: #24292f;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="box-header">
+      <div class="box-title">OpenAI.Codex_1.0.23.0_x64.msix</div>
+      <div class="tag">最新版本</div>
+    </div>
+    <div class="box-body">
+      <table class="meta-table">
+        <tr>
+          <td class="meta-label">文件大小</td>
+          <td class="meta-val">123.45 MB</td>
+        </tr>
+        <tr>
+          <td class="meta-label">系统架构</td>
+          <td class="meta-val">x64</td>
+        </tr>
+        <tr>
+          <td class="meta-label">SHA-1</td>
+          <td class="meta-val">a1b2c3d4e5f67890123456789abcdef012345678</td>
+        </tr>
+        <tr>
+          <td class="meta-label">链接有效期</td>
+          <td class="meta-val">大约剩余 28 分钟</td>
+        </tr>
+      </table>
+
+      <div class="btn-group">
+        <a href="#" class="btn btn-green">直接下载文件</a>
+        <a href="#" class="btn btn-gray">复制官方直链</a>
+      </div>
+
+      <div class="cmd-box">
+        Invoke-WebRequest -Uri "https://..." -OutFile "OpenAI.Codex.msix"
+      </div>
+    </div>
+  </div>
+</body>
+</html>

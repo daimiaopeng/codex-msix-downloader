@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案四：极客控制台风格</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+      background: #090d16;
+      color: #38edf6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .console-card {
+      width: 100%;
+      max-width: 640px;
+      background: #0d1322;
+      border: 1px solid #1e293b;
+      border-top: 3px solid #38edf6;
+      border-radius: 8px;
+      padding: 1.75rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      box-shadow: 0 0 8px #10b981;
+    }
+    .title {
+      font-size: 1.25rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    .sub {
+      color: #64748b;
+      font-size: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: #060911;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #151d2a;
+    }
+    .grid-item {
+      font-size: 0.8rem;
+    }
+    .label {
+      color: #475569;
+      margin-bottom: 0.25rem;
+    }
+    .val {
+      color: #f1f5f9;
+      word-break: break-all;
+    }
+    .btn-action {
+      display: block;
+      width: 100%;
+      background: #38edf6;
+      color: #090d16;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 0.85rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    .btn-action:hover {
+      background: #22d3ee;
+      box-shadow: 0 0 15px rgba(56, 237, 246, 0.4);
+    }
+    .btn-sub {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 1px solid #334155;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 0.65rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .btn-sub:hover {
+      border-color: #38edf6;
+      color: #38edf6;
+    }
+  </style>
+</head>
+<body>
+  <div class="console-card">
+    <div class="console-header">
+      <div><span class="status-dot"></span>SYSTEM ONLINE</div>
+      <div style="color: #64748b;">NODE_ID: CF_WORKER_01</div>
+    </div>
+    <div class="title">&gt; OPENAI_CODEX.MSIX</div>
+    <div class="sub">// 存储于微软官方 CDN 网络 的安全发布版本</div>
+
+    <div class="grid">
+      <div class="grid-item">
+        <div class="label">VERSION</div>
+        <div class="val">1.0.23.0</div>
+      </div>
+      <div class="grid-item">
+        <div class="label">ARCH</div>
+        <div class="val">x64</div>
+      </div>
+      <div class="grid-item" style="grid-column: span 2;">
+        <div class="label">SHA1_HASH</div>
+        <div class="val">a1b2c3d4e5f67890123456789abcdef012345678</div>
+      </div>
+    </div>
+
+    <a href="#" class="btn-action">[EXECUTE] 代理下载文件</a>
+    <a href="#" class="btn-sub">[COPY] 复制官方直链</a>
+  </div>
+</body>
+</html>

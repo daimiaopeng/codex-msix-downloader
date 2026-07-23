@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案六：液态毛玻璃浮雕风</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .glass-card {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 2.25rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .header h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .header p {
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+    .tabs {
+      display: flex;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 0.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #94a3b8;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .tab.active {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+    .info-list {
+      background: rgba(15, 23, 42, 0.4);
+      border-radius: 14px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .info-row:last-child {
+      margin-bottom: 0;
+    }
+    .info-row .k {
+      color: #94a3b8;
+    }
+    .info-row .v {
+      color: #f8fafc;
+      font-weight: 600;
+    }
+    .glow-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 0.875rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card">
+    <div class="header">
+      <h2>OpenAI Codex</h2>
+      <p>Cloudflare Workers 托管服务</p>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active">代理下载</div>
+      <div class="tab">302 重定向</div>
+      <div class="tab">复制直链</div>
+    </div>
+
+    <div class="info-list">
+      <div class="info-row">
+        <span class="k">版本号</span>
+        <span class="v">1.0.23.0</span>
+      </div>
+      <div class="info-row">
+        <span class="k">架构/后缀</span>
+        <span class="v">x64 (.msix)</span>
+      </div>
+      <div class="info-row">
+        <span class="k">大小</span>
+        <span class="v">123.45 MB</span>
+      </div>
+    </div>
+
+    <a href="#" class="glow-btn">立即开始代理下载</a>
+  </div>
+</body>
+</html>

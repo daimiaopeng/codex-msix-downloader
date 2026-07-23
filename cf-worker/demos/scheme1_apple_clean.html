@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案一：Apple / Vercel 极简纯白风格</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #666;
+      background: #f4f4f5;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+      color: #000000;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666666;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+    .main-btn {
+      display: block;
+      width: 100%;
+      background: #000000;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      margin-bottom: 1rem;
+    }
+    .main-btn:hover {
+      background: #222222;
+    }
+    .sec-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .sec-btn {
+      flex: 1;
+      display: block;
+      background: #f4f4f5;
+      color: #333333;
+      border: 1px solid #e4e4e7;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .sec-btn:hover {
+      background: #e4e4e7;
+      color: #000000;
+    }
+    .info-group {
+      border-top: 1px solid #eaeaea;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.85rem;
+      color: #888888;
+    }
+    .info-item span {
+      display: block;
+      color: #111111;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">v1.0.23.0 · x64 架构</div>
+    <h1>OpenAI Codex</h1>
+    <p class="subtitle">适用于 Windows 的 Microsoft Store 官方安装包直链获取与中转服务。</p>
+
+    <a href="#" class="main-btn">下载安装包 (123.45 MB)</a>
+    <div class="sec-group">
+      <a href="#" class="sec-btn">复制 CDN 原始直链</a>
+      <a href="#" class="sec-btn">查看 JSON API 接口</a>
+    </div>
+
+    <div class="info-group">
+      <div class="info-item">
+        文件格式
+        <span>MSIX</span>
+      </div>
+      <div class="info-item">
+        校验状态
+        <span>SHA-1 验证通过</span>
+      </div>
+      <div class="info-item">
+        支持系统
+        <span>Windows 10 / 11</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案一改动 C：极简三列指标卡片风格</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .wrapper {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .m-box {
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      padding: 0.875rem 0.5rem;
+      border-radius: 12px;
+    }
+    .m-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .m-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .primary-action {
+      display: block;
+      width: 100%;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.875rem;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+    }
+    .sub-action {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+    .sub-action:hover {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>OpenAI Codex</h1>
+    <p class="desc">Microsoft Store 官方 MSIX 软件包快速下载</p>
+
+    <div class="metrics">
+      <div class="m-box">
+        <div class="m-label">最新版本</div>
+        <div class="m-val">1.0.23.0</div>
+      </div>
+      <div class="m-box">
+        <div class="m-label">文件大小</div>
+        <div class="m-val">123.45 MB</div>
+      </div>
+      <div class="m-box">
+        <div class="m-label">架构格式</div>
+        <div class="m-val">x64 / MSIX</div>
+      </div>
+    </div>
+
+    <a href="#" class="primary-action">一键代理下载</a>
+    <a href="#" class="sub-action">复制微软 CDN 原始直链</a>
+  </div>
+</body>
+</html>
