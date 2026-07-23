@@ -14,6 +14,7 @@
     "LANGUAGE": "zh-CN",
     "NAME_CONTAINS": "OpenAI.Codex",
     "ARCH": "x64",
-    "EXTENSION": ".msix"
+    "EXTENSION": ".msix",
+    "CF_BEACON_TOKEN": "fe95d5f462554d1e9af97b1245d30bb4"
   }
 }

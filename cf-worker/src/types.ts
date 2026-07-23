@@ -44,6 +44,7 @@ export interface Env {
   NAME_CONTAINS?: string;
   ARCH?: string;
   EXTENSION?: string;
+  CF_BEACON_TOKEN?: string;
 }
 
 /**
@@ -53,4 +54,5 @@ export interface PageData {
   file: StoreFile | null;
   error: string | null;
   generatedAt: string;
+  beaconToken?: string;
 }

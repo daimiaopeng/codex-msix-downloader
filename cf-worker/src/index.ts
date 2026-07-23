@@ -519,6 +519,9 @@ function renderHtml(data: PageData): string {
 
   <div id="toast" class="toast">已成功复制直链到剪贴板</div>
 
+  <!-- Cloudflare 官方 Web Analytics 商业统计 -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "${data.beaconToken || "fe95d5f462554d1e9af97b1245d30bb4"}"}'></script>
+
   <script>
     function copyDirectUrl(url) {
       navigator.clipboard.writeText(url).then(() => {
@@ -638,13 +641,13 @@ export default {
 
       try {
         const file = await fetchLatest(config);
-        pageData = { file, error: null, generatedAt };
+        pageData = { file, error: null, generatedAt, beaconToken: env.CF_BEACON_TOKEN };
       } catch (err: any) {
         let msg = err.message || String(err);
         if (msg.includes("internal error") || msg.includes("challenge") || msg.includes("fetch failed")) {
           msg += " (提示：在本地 wrangler dev 模拟环境下，第三方接口 rg-adguard 会被 Cloudflare 防火墙拦截；部署至 Cloudflare Workers 边缘节点后将正常工作)";
         }
-        pageData = { file: null, error: msg, generatedAt };
+        pageData = { file: null, error: msg, generatedAt, beaconToken: env.CF_BEACON_TOKEN };
       }
 
       return new Response(renderHtml(pageData), {
